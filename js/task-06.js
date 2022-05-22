@@ -1,9 +1,11 @@
 const inputEl = document.querySelector('#validation-input');
-console.log(inputEl.dataset.length);
 inputEl.addEventListener('input', () => {
-  if (inputEl.value.length <= inputEl.dataset.length) {
+  if (Number(inputEl.value.length) === Number(inputEl.dataset.length)) {
     inputEl.classList.remove('invalid');
     inputEl.classList.add('valid');
   }
-  else {inputEl.classList.add('invalid');}
+  else {
+    inputEl.classList.add('invalid');
+    inputEl.classList.remove('valid');
+}
 });
